@@ -12,7 +12,7 @@
  * *************************************************************************
  * ************************************************************************ */-->
 {{#intro}}
-<div id="mod_tab_introbox" class="row">
+<div id="mod_recittab_introbox" class="row">
     <div class="col mb-3">
         {{{intro}}}
     </div>
@@ -41,18 +41,18 @@
     {{/showMenu}}
     <div class="col{{#showMenu}}-md-9{{/showMenu}}">
         <ul class="nav nav-tabs" id="TabbedPanelsTabGroup" role="tablist">
-            {{#tabs}}
+            {{#recittabs}}
             <li class="nav-item">
                 <a class="nav-link {{#active}}active{{/active}}" id="tab-{{{id}}}" data-toggle="tab" href="#tab{{{id}}}" role="tab" aria-controls="tab{{{id}}}">{{{name}}}</a>
             </li>
-            {{/tabs}}
+            {{/recittabs}}
         </ul>
         <div class="tab-content" id="TabbedPanelsTabContent">
-            {{#tabs}}
+            {{#recittabs}}
             <div class="tab-pane fade show {{#active}}active{{/active}} mt-3" id="tab{{{id}}}" role="tabpanel" aria-labelledby="tab{{{id}}}">
                 {{{content}}}
             </div>
-            {{/tabs}}
+            {{/recittabs}}
         </div>
     </div>
 </div>

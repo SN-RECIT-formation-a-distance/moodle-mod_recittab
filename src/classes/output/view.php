@@ -13,7 +13,7 @@
  * *************************************************************************
  * ************************************************************************ */
 
-namespace mod_tab\output;
+namespace mod_recittab\output;
 
 /**
  * 
@@ -23,7 +23,7 @@ namespace mod_tab\output;
  */
 class view implements \renderable, \templatable {
 
-    private $tab;
+    private $recittab;
     private $courseId;
     private $courseContext;
     private $cm;
@@ -33,14 +33,14 @@ class view implements \renderable, \templatable {
      * @global type $CFG
      * @global \stdClass $USER
      * @global \moodle_database $DB
-     * @param array $tab
+     * @param array $recittab
      * @param int $courseId
      * @param array $cm
      */
-    public function __construct($tab, $courseId, $cm) {
+    public function __construct($recittab, $courseId, $cm) {
         global $CFG, $USER, $DB;
 
-        $this->tab = $tab;
+        $this->tab = $recittab;
         $this->courseId = $courseId;
         $this->courseContext = \context_course::instance($courseId);
         $this->cm = $cm;
@@ -56,36 +56,36 @@ class view implements \renderable, \templatable {
     public function export_for_template(\renderer_base $output) {
         global $CFG, $USER, $DB, $COURSE;
 
-        $tab = $this->tab;
+        $recittab = $this->tab;
         $cm = $this->cm;
         $intro = '';
-        if (trim(strip_tags($tab->intro))) {
-            $intro = format_module_intro('tab', $tab, $cm->id);
+        if (trim(strip_tags($recittab->intro))) {
+            $intro = format_module_intro('recittab', $recittab, $cm->id);
         }
 
         $data = [
             'wwwroot' => $CFG->wwwroot,
             'intro' => $intro,
-            'showMenu' => $tab->displaymenu,
-            'menu' => $this->getTabMenuContent(),
-            'tabs' => $this->getTabContent()
+            'showMenu' => $recittab->displaymenu,
+            'menu' => $this->getrecitTabMenuContent(),
+            'recittabs' => $this->getTabContent()
         ];
 
         return $data;
     }
 
-    private function getTabMenuContent() {
+    private function getrecitTabMenuContent() {
         global $DB;
 
         $contentSql = 'SELECT {course_modules}.id as id,
             {course_modules}.visible as visible, 
-            {tab}.name as name, 
-            {tab}.taborder as taborder,
-            {tab}.menuname as menuname 
+            {recittab}.name as name, 
+            {recittab}.recittaborder as recittaborder,
+            {recittab}.menuname as menuname 
             FROM ({modules} INNER JOIN {course_modules} ON {modules}.id = {course_modules}.module)
-            INNER JOIN {tab} ON {course_modules}.instance = {tab}.id 
+            INNER JOIN {recittab} ON {course_modules}.instance = {recittab}.id 
             WHERE ((({modules}.name)=\'tab\') AND (({course_modules}.course)=?))
-            ORDER BY taborder;';
+            ORDER BY recittaborder;';
 
         $results = $DB->get_records_sql($contentSql, [$this->courseId]);
 
@@ -93,7 +93,7 @@ class view implements \renderable, \templatable {
         $i = 0;
         foreach ($results as $result) { /// foreach
             //only print the tabs that have the same menu name
-            if ($result->menuname == $this->tab->menuname) {
+            if ($result->menuname == $this->recittab->menuname) {
                 //only print visible tabs within the menu
 
                 if ($result->visible == 1 || has_capability('moodle/course:update', $this->courseContext)) {
@@ -117,7 +117,7 @@ class view implements \renderable, \templatable {
         
         $context = \context_module::instance($this->cm->id);
         $editoroptions = array('subdirs' => 1, 'maxbytes' => $CFG->maxbytes, 'maxfiles' => -1, 'changeformat' => 1, 'context' => $context, 'noclean' => 1, 'trusttext' => true);
-        $options = $DB->get_records('tab_content', array('tabid' => $this->tab->id), 'tabcontentorder');
+        $options = $DB->get_records('recittab_content', array('recittabid' => $this->tab->id), 'recittabcontentorder');
         $contents = [];
         $i = 0;
         foreach ($options as $option) {
@@ -140,7 +140,7 @@ class view implements \renderable, \templatable {
                 if (empty($option->format)) {
                     $option->format = 1;
                 }
-                $content = file_rewrite_pluginfile_urls($option->tabcontent, 'pluginfile.php', $context->id, 'mod_tab', 'content', $option->id);
+                $content = file_rewrite_pluginfile_urls($option->recittabcontent, 'pluginfile.php', $context->id, 'mod_recittab', 'content', $option->id);
                 $content = format_text($content, $option->contentformat, $editoroptions, $context);
                 //PDF
                 $content2 = str_ireplace(array(' ', "\n", "\r", "\t", '&nbsp;'), array(), strip_tags($content, '<a>'));
@@ -158,13 +158,13 @@ class view implements \renderable, \templatable {
             //Enter into proper div
             //Check for pdf
             if (!empty($externalurl) && preg_match('/\bpdf\b/i', $externalurl)) {
-                $contents[$i]['content'] = tab_embed_general(process_urls($externalurl), '', get_string('embed_fail_msg', 'tab') . "<a href='$externalurl' target='_blank' >" . get_string('embed_fail_link_text', 'tab') . '</a>', 'application/pdf');
+                $contents[$i]['content'] = recittab_embed_general(process_urls($externalurl), '', get_string('embed_fail_msg', 'recittab') . "<a href='$externalurl' target='_blank' >" . get_string('embed_fail_link_text', 'recittab') . '</a>', 'application/pdf');
             } elseif (!empty($externalurl)) {
-                $contents[$i]['content'] = tab_embed_general(process_urls($externalurl), '', get_string('embed_fail_msg', 'tab') . "<a href='$externalurl' target='_blank' >" . get_string('embed_fail_link_text', 'tab') . '</a>', 'text/html');
+                $contents[$i]['content'] = recittab_embed_general(process_urls($externalurl), '', get_string('embed_fail_msg', 'recittab') . "<a href='$externalurl' target='_blank' >" . get_string('embed_fail_link_text', 'recittab') . '</a>', 'text/html');
             } else {
                 $contents[$i]['content'] = $content;
             }
-            $contents[$i]['name'] = $option->tabname;
+            $contents[$i]['name'] = $option->recittabname;
             $contents[$i]['id'] = $option->id;
             if ($i == 0) {
                $contents[$i]['active'] = true; 

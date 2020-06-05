@@ -1,5 +1,4 @@
 <?php
-
 /**
  * *************************************************************************
  * *                         OOHOO - Tab Display                          **
@@ -13,19 +12,29 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later  **
  * *************************************************************************
  * ************************************************************************ */
-
-namespace mod_recittab\output;
+defined('MOODLE_INTERNAL') || die; 
 
 /**
- * Description of renderer
- *
- * @author patrick
+ * This function is run when the plugin have to be updated
+ * @global stdClass $CFG
+ * @global moodle_database $DB
+ * @param int $oldversion The older version of the plugin installed on the moodle
+ * @return boolean True if the update passed successfully
  */
-class renderer extends \plugin_renderer_base {
+function xmldb_recittab_upgrade($oldversion = 0)
+{
 
-    public function render_view(\templatable $view) {
-        $data = $view->export_for_template($this);
-        return $this->render_from_template('mod_recittab/view', $data);
+    global $CFG, $THEME, $DB;
+
+    $dbman = $DB->get_manager();
+
+       
+
+   
+    if ($oldversion < 201906242)
+    {
+        //+ Moodle 3.8 Update
+        // tab savepoint reached
+        upgrade_mod_savepoint(true, 2019062401, 'recittab');
     }
-
 }

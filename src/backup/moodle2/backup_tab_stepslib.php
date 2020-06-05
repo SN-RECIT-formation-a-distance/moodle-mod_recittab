@@ -30,26 +30,26 @@ class backup_tab_activity_structure_step extends backup_activity_structure_step
         $tab = new backup_nested_element('tab', array('id'), array('name', 'intro', 
                     'css', 'menucss', 'displaymenu', 'menuname', 'taborder', 'legacyfiles', 'legacyfileslast', 'timemodified', 'introformat'));
 
-        $tab_contents = new backup_nested_element('tab_contents');
+        $recittab_content s = new backup_nested_element('recittab_content s');
 
-        $tab_content = new backup_nested_element('tab_content', array('id'), array('tabname',
+        $recittab_content  = new backup_nested_element('recittab_content ', array('id'), array('tabname',
                     'tabcontent', 'tabcontentorder', 'externalurl', 'contentformat', 'timemodified'));
 
         // Build the tree
-        $tab->add_child($tab_contents);
-        $tab_contents->add_child($tab_content);
+        $tab->add_child($recittab_content s);
+        $recittab_content s->add_child($recittab_content );
         // Define sources
         $tab->set_source_table('tab', array('id' => backup::VAR_ACTIVITYID));
 
-        $tab_content->set_source_sql(
-                'SELECT * FROM {tab_content}
+        $recittab_content ->set_source_sql(
+                'SELECT * FROM {recittab_content }
                         WHERE tabid = ?', array(backup::VAR_PARENTID));
 
         // Define id annotations
-        //$tab_content->annotate_ids('tabid', 'tabid');
+        //$recittab_content ->annotate_ids('tabid', 'tabid');
         // Define file annotations
-        $tab->annotate_files('mod_tab', 'intro', null);
-        $tab_content->annotate_files('mod_tab', 'content', 'id');
+        $tab->annotate_files('mod_recittab', 'intro', null);
+        $recittab_content ->annotate_files('mod_recittab', 'content', 'id');
 
         // Return the root element (tab), wrapped into standard activity structure
         return $this->prepare_activity_structure($tab);

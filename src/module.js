@@ -11,10 +11,10 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later  **
  * *************************************************************************
  * ************************************************************************ */
-M.mod_tab = {};
+M.mod_recittab = {};
 
 /** Useful for full embedding of various stuff */
-M.mod_tab.init_maximised_embed = function(Y, id) {
+M.mod_recittab.init_maximised_embed = function(Y, id) {
     var obj = Y.one('#'+id);
     if (!obj) {
         return;

@@ -13,13 +13,13 @@
  * *************************************************************************
  * ************************************************************************ */
 $string['name'] = 'Nom'; 
-$string['modulename'] = 'Onglet';
+$string['modulename'] = 'RÉCIT activité affichage par onglets';
 $string['ajouter'] = 'Ajouter un onglet';
 $string['modulenameplural'] = 'Onglets';
 $string['tabname'] = 'Nom de l\'onglet';
 $string['taborder'] = 'Ordre des onglet dans le menu';
 $string['tabcontent'] = 'Content de l\'onglet';
-$string['tab'] = 'Onglet';
+$string['tab'] = 'RÉCIT Onglet';
 $string['moretabs'] = 'Utiliser plus d\'onglet';
 $string['changestyle'] = 'Modifier la feuille de style';
 $string['css'] = 'feuille de style';

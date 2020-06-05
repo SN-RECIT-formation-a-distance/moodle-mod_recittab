@@ -30,7 +30,7 @@ class restore_tab_activity_structure_step extends restore_activity_structure_ste
         $userinfo = $this->get_setting_value('userinfo');
 
         $paths[] = new restore_path_element('tab', '/activity/tab');
-        $paths[] = new restore_path_element('tab_content', '/activity/tab/tab_contents/tab_content');
+        $paths[] = new restore_path_element('recittab_content ', '/activity/tab/recittab_content s/recittab_content ');
 
 
         // Return the paths wrapped into standard activity structure
@@ -52,7 +52,7 @@ class restore_tab_activity_structure_step extends restore_activity_structure_ste
         $this->apply_activity_instance($newitemid);
     }
 
-    protected function process_tab_content($data)
+    protected function process_recittab_content ($data)
     {
         global $DB;
 
@@ -62,16 +62,16 @@ class restore_tab_activity_structure_step extends restore_activity_structure_ste
         $data->tabid = $this->get_new_parentid('tab');
         $data->timemodified = $this->apply_date_offset($data->timemodified);
 
-        $newitemid = $DB->insert_record('tab_content', $data);
-        $this->set_mapping('tab_content', $oldid, $newitemid, true); //has related files
+        $newitemid = $DB->insert_record('recittab_content ', $data);
+        $this->set_mapping('recittab_content ', $oldid, $newitemid, true); //has related files
     }
 
     protected function after_execute()
     {
         global $DB;
-        // Add tab related files where itemname = tab_content (taken from $this->set_mapping)
-        $this->add_related_files('mod_tab', 'intro', null);
-        $this->add_related_files('mod_tab', 'content', 'tab_content');
+        // Add tab related files where itemname = recittab_content  (taken from $this->set_mapping)
+        $this->add_related_files('mod_recittab', 'intro', null);
+        $this->add_related_files('mod_recittab', 'content', 'recittab_content ');
     }
 
 }

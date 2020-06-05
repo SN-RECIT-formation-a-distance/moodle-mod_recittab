@@ -16,7 +16,7 @@
 defined('MOODLE_INTERNAL') || die;
 
 $capabilities = array(
-    'mod/tab:view' => array(
+    'mod/recittab:view' => array(
         'captype' => 'read',
         'contextlevel' => CONTEXT_MODULE,
         'archetypes' => array(
@@ -28,7 +28,7 @@ $capabilities = array(
             'user' => CAP_ALLOW,
         )
     ),
-    'mod/tab:addinstance' => array(
+    'mod/recittab:addinstance' => array(
         'captype' => 'write',
         'contextlevel' => CONTEXT_MODULE,
         'archetypes' => array(

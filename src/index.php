@@ -22,8 +22,8 @@ $course = $DB->get_record('course', array('id' => $id), '*', MUST_EXIST);
 require_course_login($course, true);
 $PAGE->set_pagelayout('incourse');
 
-$strpage = get_string('modulename', 'tab');
-$strpages = get_string('modulenameplural', 'tab');
+$strpage = get_string('modulename', 'recittab');
+$strpages = get_string('modulenameplural', 'recittab');
 $strsectionname = get_string('sectionname', 'format_' . $course->format);
 $strname = get_string('name');
 $strintro = get_string('moduleintro');
@@ -31,24 +31,24 @@ $strlastmodified = get_string('lastmodified');
 
 $modinfo = get_fast_modinfo($course);
 
-$PAGE->set_url('/mod/tab/index.php', array('id' => $course->id));
+$PAGE->set_url('/mod/reicttab/index.php', array('id' => $course->id));
 $PAGE->set_title($course->shortname . ': ' . $strpages);
 $PAGE->set_heading($course->fullname);
 $PAGE->navbar->add($strpages);
 echo $OUTPUT->header();
 
 //log the view information
-$event = \mod_tab\event\course_module_instance_list_viewed::create(array(
+$event = \mod_recittab\event\course_module_instance_list_viewed::create(array(
     'objectid' => $PAGE->cm->instance,
     'context' => $PAGE->context,
 ));
 $event->add_record_snapshot('course', $PAGE->course);
-$event->add_record_snapshot($PAGE->cm->modname, $tab);
+$event->add_record_snapshot($PAGE->cm->modname, $recittab);
 $event->trigger();
 
 
 
-if (!$tabs = get_all_instances_in_course('tab', $course))
+if (!$tabs = get_all_instances_in_course('recittab', $course))
 {
     notice(get_string('thereareno', 'moodle', $strpages), "$CFG->wwwroot/course/view.php?id=$course->id");
     exit;
@@ -77,36 +77,36 @@ else
 
 
 $currentsection = '';
-foreach ($tabs as $tab)
+foreach ($recittabs as $recittab)
 {
-    $cm = $modinfo->cms[$tab->coursemodule];
+    $cm = $modinfo->cms[$recittab->coursemodule];
     if ($usesections)
     {
         $printsection = '';
-        if ($tab->section !== $currentsection)
+        if ($recittab->section !== $currentsection)
         {
-            if ($tab->section)
+            if ($recittab->section)
             {
-                $printsection = get_section_name($course, $sections[$tab->section]);
+                $printsection = get_section_name($course, $sections[$recittab->section]);
             }
             if ($currentsection !== '')
             {
                 $table->data[] = 'hr';
             }
-            $currentsection = $tab->section;
+            $currentsection = $reciittab->section;
         }
     }
     else
     {
-        $printsection = '<span class="smallinfo">' . userdate($tab->timemodified) . "</span>";
+        $printsection = '<span class="smallinfo">' . userdate($recittab->timemodified) . "</span>";
     }
 
-    $class = $tab->visible ? '' : 'class="dimmed"'; // hidden modules are dimmed
+    $class = $recittab->visible ? '' : 'class="dimmed"'; // hidden modules are dimmed
 
     $table->data[] = array(
         $printsection,
-        "<a $class href=\"view.php?id=$cm->id\">" . format_string($tab->name) . "</a>",
-        format_module_intro('tab', $tab, $cm->id));
+        "<a $class href=\"view.php?id=$cm->id\">" . format_string($recittab->name) . "</a>",
+        format_module_intro('recittab', $recittab, $cm->id));
 }
 
 echo html_writer::table($table);

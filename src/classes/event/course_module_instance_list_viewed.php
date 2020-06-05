@@ -1,5 +1,5 @@
 <?php
-namespace mod_tab\event;
+namespace mod_recittab\event;
 
 defined('MOODLE_INTERNAL') || die();
 
