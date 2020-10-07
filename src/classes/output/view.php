@@ -79,7 +79,21 @@ class view implements \renderable, \templatable {
             case 4:
                 $classrecitstyle = "recit_tab_4" ;
                 break;
-        }
+            case 5:
+                $classrecitstyle = "recit_tab_5" ;
+                break;
+            case 6:
+                $classrecitstyle = "recit_tab_6" ;
+                break;
+            case 7:
+                $classrecitstyle = "recit_tab_7" ;
+                break;
+            case 8:
+                $classrecitstyle = "recit_tab_8" ;
+                break;
+            default: $classrecitstyle = "recit_tab_2" ;
+                break;
+    }
         $data = [
             'wwwroot' => $CFG->wwwroot,
             'intro' => $intro,

@@ -141,7 +141,11 @@ class mod_tab_mod_form extends moodleform_mod
             1 => 'Recit_fad_1',
             2 => 'Recit_fad_2',
             3 => 'Recit_fad_3',
-            4 => 'Recit_fad_4'
+            4 => 'Recit_fad_4',
+            5 => 'Recit_fad_5',
+            6 => 'Recit_fad_6',
+            7 => 'Recit_fad_7',
+            8 => 'Recit_fad_8'
         );
         $mform->addElement('advcheckbox', 'displaymenu', get_string('displaymenuagree', 'tab'), null, array('group' => 1), array('0', '1'));
         $mform->addElement('select', 'classrecit', get_string('tabstyle', 'tab'), $tabstyleoptions);

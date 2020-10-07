@@ -28,7 +28,7 @@ class backup_tab_activity_structure_step extends backup_activity_structure_step
 
         // Define each element separated
         $tab = new backup_nested_element('tab', array('id'), array('name', 'intro', 
-                    'css', 'menucss', 'displaymenu', 'menuname', 'taborder', 'legacyfiles', 'legacyfileslast', 'timemodified', 'introformat'));
+                    'css', 'menucss', 'displaymenu', 'menuname', 'taborder', 'legacyfiles', 'legacyfileslast', 'timemodified', 'introformat','classrecit'));
 
         $tab_contents = new backup_nested_element('tab_contents');
 
