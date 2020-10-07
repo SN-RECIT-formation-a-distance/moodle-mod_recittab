@@ -15,7 +15,7 @@
  * ************************************************************************ */
 defined('MOODLE_INTERNAL') || die();
 
-require_once($CFG->dirroot . '/mod/recittab/backup/moodle2/restore_tab_stepslib.php'); // Because it exists (must)
+require_once($CFG->dirroot . '/mod/tab/backup/moodle2/restore_tab_stepslib.php'); // Because it exists (must)
 
 /**
  * choice restore task that provides all the settings and steps to perform one
@@ -62,7 +62,7 @@ class restore_tab_activity_task extends restore_activity_task
     static public function define_decode_rules() {
         $rules = array();
 
-        $rules[] = new restore_decode_rule('TABVIEWBYID', '/mod/recittab/view.php?id=$1', 'course_module');
+        $rules[] = new restore_decode_rule('TABVIEWBYID', '/mod/tab/view.php?id=$1', 'course_module');
 
         return $rules;
 

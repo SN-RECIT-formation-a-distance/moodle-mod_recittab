@@ -14,7 +14,7 @@
  * *************************************************************************
  * ************************************************************************ */
 
-namespace mod_recittab\output;
+namespace mod_tab\output;
 
 /**
  * Description of renderer
@@ -25,7 +25,7 @@ class renderer extends \plugin_renderer_base {
 
     public function render_view(\templatable $view) {
         $data = $view->export_for_template($this);
-        return $this->render_from_template('mod_recittab/view', $data);
+        return $this->render_from_template('mod_tab/view', $data);
     }
 
 }

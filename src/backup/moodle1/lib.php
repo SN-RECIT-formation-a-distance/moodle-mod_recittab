@@ -18,7 +18,7 @@ defined('MOODLE_INTERNAL') || die();
 /**
  * Tab Display conversion handler
  */
-class moodle1_mod_recittab_handler extends moodle1_mod_handler
+class moodle1_mod_tab_handler extends moodle1_mod_handler
 {
 
     /** @var moodle1_file_manager */
@@ -44,8 +44,8 @@ class moodle1_mod_recittab_handler extends moodle1_mod_handler
     {
         return array(
             new convert_path('tab', '/MOODLE_BACKUP/COURSE/MODULES/MOD/TAB'),
-            new convert_path('tab_contents', '/MOODLE_BACKUP/COURSE/MODULES/MOD/RECITTAB/TABCONTENTS'),
-            new convert_path('tab_content', '/MOODLE_BACKUP/COURSE/MODULES/MOD/RECITTAB/TABCONTENTS/TABCONTENT',
+            new convert_path('tab_contents', '/MOODLE_BACKUP/COURSE/MODULES/MOD/TAB/TABCONTENTS'),
+            new convert_path('tab_content', '/MOODLE_BACKUP/COURSE/MODULES/MOD/TAB/TABCONTENTS/TABCONTENT',
                     array(
                         'renamefields' => array(
                             'format' => 'contentformat',
@@ -73,7 +73,7 @@ class moodle1_mod_recittab_handler extends moodle1_mod_handler
         $contextid = $this->converter->get_contextid(CONTEXT_MODULE, $this->moduleid);
 
         // get a fresh new file manager for this instance
-        $this->fileman = $this->converter->get_file_manager($contextid, 'mod_recittab');
+        $this->fileman = $this->converter->get_file_manager($contextid, 'mod_tab');
 
         // convert course files embedded into the intro
         //$this->fileman->filearea = 'tabcontent';

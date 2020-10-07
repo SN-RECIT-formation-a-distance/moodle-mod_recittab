@@ -22,7 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace mod_recittab\event;
+namespace mod_tab\event;
 defined('MOODLE_INTERNAL') || die();
 
 /**
@@ -41,11 +41,11 @@ class course_module_viewed extends \core\event\course_module_viewed {
     protected function init() {
         $this->data['crud'] = 'r';
         $this->data['edulevel'] = self::LEVEL_PARTICIPATING;
-        $this->data['objecttable'] = 'recittab';
+        $this->data['objecttable'] = 'tab';
     }
 
     public static function get_objectid_mapping() {
-        return array('db' => 'recittab', 'restore' => 'recittab');
+        return array('db' => 'tab', 'restore' => 'tab');
     }
 }
 

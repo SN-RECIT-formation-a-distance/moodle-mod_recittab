@@ -18,4 +18,4 @@ $plugin->requires = 2019052000;
 $plugin->maturity = MATURITY_STABLE;
 $plugin->release = '3.0.0 (Build: 2019062400)';
 $plugin->cron = 0;           // Period for cron to check this module (secs)
-$plugin->component = 'mod_recittab';
+$plugin->component = 'mod_tab';

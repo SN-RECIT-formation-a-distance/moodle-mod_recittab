@@ -28,7 +28,7 @@ defined('MOODLE_INTERNAL') || die;
  * @param string $feature FEATURE_xx constant for requested feature
  * @return bool|null True if module supports feature, false if not, null if doesn't know
  */
-function recittab_supports($feature)
+function tab_supports($feature)
 {
     switch ($feature)
     {
@@ -51,7 +51,7 @@ function recittab_supports($feature)
  * Returns all other caps used in module
  * @return array
  */
-function recittab_get_extra_capabilities()
+function tab_get_extra_capabilities()
 {
     return array('moodle/site:accessallgroups');
 }
@@ -61,7 +61,7 @@ function recittab_get_extra_capabilities()
  * @param $data the data submitted from the reset course.
  * @return array status array
  */
-function recittab_reset_userdata($recittab)
+function tab_reset_userdata($tab)
 {
     return array();
 }
@@ -70,7 +70,7 @@ function recittab_reset_userdata($recittab)
  * List of view style log actions
  * @return array
  */
-function recittab_get_view_actions()
+function tab_get_view_actions()
 {
     return array('view', 'view all');
 }
@@ -79,7 +79,7 @@ function recittab_get_view_actions()
  * List of update style log actions
  * @return array
  */
-function recittab_get_post_actions()
+function tab_get_post_actions()
 {
     return array('update', 'add');
 }
@@ -90,22 +90,22 @@ function recittab_get_post_actions()
  * @param object $mform
  * @return int new page instance id
  */
-function recittab_add_instance($recittab)
+function tab_add_instance($tab)
 {
     global $CFG, $DB;
 
     require_once("$CFG->libdir/resourcelib.php");
 
-    $cmid = $recittab->coursemodule;
-    $recittab->timemodified = time();
+    $cmid = $tab->coursemodule;
+    $tab->timemodified = time();
 
 
     //insert tabs and content
-    if ($recittab->id = $DB->insert_record("recittab", $recittab))
+    if ($tab->id = $DB->insert_record("tab", $tab))
     {
 
         // we need to use context now, so we need to make sure all needed info is already in db
-        $DB->set_field('course_modules', 'instance', $recittab->id, array('id' => $cmid));
+        $DB->set_field('course_modules', 'instance', $tab->id, array('id' => $cmid));
         //Replace get_context_instance by the class for moodle 2.6+
         if(class_exists('context_module'))
         {
@@ -117,52 +117,52 @@ function recittab_add_instance($recittab)
         }
         $editoroptions = array('subdirs' => 1, 'maxbytes' => $CFG->maxbytes, 'maxfiles' => -1, 'changeformat' => 1, 'context' => $context, 'noclean' => 1, 'trusttext' => true);
 
-        foreach ($recittab->tabname as $key => $value)
+        foreach ($tab->tabname as $key => $value)
         {
             $value = trim($value);
             if (isset($value) && $value <> '')
             {
                 $option = new stdClass();
                 $option->tabname = $value;
-                $option->tabid = $recittab->id;
+                $option->tabid = $tab->id;
 
-                if (isset($recittab->content[$key]['format']))
+                if (isset($tab->content[$key]['format']))
                 {
-                    $option->contentformat = $recittab->content[$key]['format'];
+                    $option->contentformat = $tab->content[$key]['format'];
                 }
 
-                if (isset($recittab->tabcontentorder[$key]))
+                if (isset($tab->tabcontentorder[$key]))
                 {
-                    $option->tabcontentorder = $recittab->tabcontentorder[$key];
+                    $option->tabcontentorder = $tab->tabcontentorder[$key];
                 }
 
-                if (isset($recittab->content[$key]['externalurl']))
+                if (isset($tab->content[$key]['externalurl']))
                 {
-                    $option->externalurl = $recittab->content[$key]['externalurl'];
+                    $option->externalurl = $tab->content[$key]['externalurl'];
                 }
                 $option->timemodified = time();
                 //Must get id number from inserted record to update the editor field (tabcontent)
-                $newrecittab_content_id = $DB->insert_record("recittab_content", $option);
+                $newtab_content_id = $DB->insert_record("tab_content", $option);
 
                 //tab content is now an array due to the new editor
                 //In order to enter file information from the editor
                 //We must now update the record once it has been created
 
-                if (isset($recittab->content[$key]['text']))
+                if (isset($tab->content[$key]['text']))
                 {
-                    $draftitemid = $recittab->content[$key]['itemid'];
+                    $draftitemid = $tab->content[$key]['itemid'];
                     if ($draftitemid)
                     {
-                        $recittabcontentupdate = new stdClass();
-                        $recittabcontentupdate->id = $newrecittab_content_id;
-                        $recittabcontentupdate->recittabcontent = file_save_draft_area_files($draftitemid, $context->id, 'mod_recittab', 'content', $newrecittab_content_id, $editoroptions, $recittab->content[$key]['text']);
-                        $DB->update_record('recittab_content', $recittabcontentupdate);
+                        $tabcontentupdate = new stdClass();
+                        $tabcontentupdate->id = $newtab_content_id;
+                        $tabcontentupdate->tabcontent = file_save_draft_area_files($draftitemid, $context->id, 'mod_tab', 'content', $newtab_content_id, $editoroptions, $tab->content[$key]['text']);
+                        $DB->update_record('tab_content', $tabcontentupdate);
                     }
                 }
             }
         }
     }
-    return $recittab->id;
+    return $tab->id;
 }
 
 /**
@@ -175,22 +175,22 @@ function recittab_add_instance($recittab)
  * @param object $instance An object from the form in mod.html
  * @return boolean Success/Fail
  * */
-function recittab_update_instance($recittab)
+function tab_update_instance($tab)
 {
     global $CFG, $DB;
 
     require_once("$CFG->libdir/resourcelib.php");
 
-    $cmid = $recittab->coursemodule;
+    $cmid = $tab->coursemodule;
 
-    $recittab->timemodified = time();
-    $recittab->id = $recittab->instance;
+    $tab->timemodified = time();
+    $tab->id = $tab->instance;
 
-    foreach ($recittab->recittabname as $key => $value)
+    foreach ($tab->tabname as $key => $value)
     {
 
         // we need to use context now, so we need to make sure all needed info is already in db
-        $DB->set_field('course_modules', 'instance', $recittab->id, array('id' => $cmid));
+        $DB->set_field('course_modules', 'instance', $tab->id, array('id' => $cmid));
         //Replace get_context_instance by the class for moodle 2.6+
         if(class_exists('context_module'))
         {
@@ -205,56 +205,56 @@ function recittab_update_instance($recittab)
 
         $value = trim($value);
         $option = new stdClass();
-        $option->recittabname = $value;
-        $option->recittabcontentorder = $recittab->recittabcontentorder[$key];
-        $option->externalurl = $recittab->externalurl[$key];
+        $option->tabname = $value;
+        $option->tabcontentorder = $tab->tabcontentorder[$key];
+        $option->externalurl = $tab->externalurl[$key];
         //tab content is now an array due to the new editor
-        $draftitemid = $recittab->content[$key]['itemid'];
+        $draftitemid = $tab->content[$key]['itemid'];
 
         if ($draftitemid)
         {
-            $option->recittabcontent = file_save_draft_area_files($draftitemid, $context->id, 'mod_recittab', 'content', $recittab->optionid[$key], $editoroptions, $recittab->content[$key]['text']);
+            $option->tabcontent = file_save_draft_area_files($draftitemid, $context->id, 'mod_tab', 'content', $tab->optionid[$key], $editoroptions, $tab->content[$key]['text']);
         }
-        $option->contentformat = $recittab->content[$key]['format'];
-        $option->recittabid = $recittab->id;
+        $option->contentformat = $tab->content[$key]['format'];
+        $option->tabid = $tab->id;
         $option->timemodified = time();
 
-        if (isset($recittab->optionid[$key]) && !empty($recittab->optionid[$key]))
+        if (isset($tab->optionid[$key]) && !empty($tab->optionid[$key]))
         {//existing tab record
-            $option->id = $recittab->optionid[$key];
+            $option->id = $tab->optionid[$key];
             if (isset($value) && $value <> '')
             {
-                $DB->update_record("recittab_content", $option);
+                $DB->update_record("tab_content", $option);
             }
             else
             { //empty old option - needs to be deleted.
-                $DB->delete_records("recittab_content", array("id" => $option->id));
+                $DB->delete_records("tab_content", array("id" => $option->id));
             }
         }
         else
         {
             if (isset($value) && $value <> '')
             {
-                $newrecittab_content_id = $DB->insert_record("recittab_content", $option);
+                $newtab_content_id = $DB->insert_record("tab_content", $option);
                 //tab content is now an array due to the new editor
                 //In order to enter file information from the editor
                 //We must now update the record once it has been created
 
-                if (isset($recittab->content[$key]['text']))
+                if (isset($tab->content[$key]['text']))
                 {
-                    $draftitemid = $recittab->content[$key]['itemid'];
+                    $draftitemid = $tab->content[$key]['itemid'];
                     if ($draftitemid)
                     {
-                        $recittabcontentupdate = new stdClass();
-                        $recittabcontentupdate->id = $newrecittab_content_id;
-                        $recittabcontentupdate->recittabcontent = file_save_draft_area_files($draftitemid, $context->id, 'mod_recittab', 'content', $newrecittab_content_id, $editoroptions, $recittab->content[$key]['text']);
-                        $DB->update_record('recittab_content', $recittabcontentupdate);
+                        $tabcontentupdate = new stdClass();
+                        $tabcontentupdate->id = $newtab_content_id;
+                        $tabcontentupdate->tabcontent = file_save_draft_area_files($draftitemid, $context->id, 'mod_tab', 'content', $newtab_content_id, $editoroptions, $tab->content[$key]['text']);
+                        $DB->update_record('tab_content', $tabcontentupdate);
                     }
                 }
             }
         }
     }
-    return $DB->update_record("recittab", $recittab);
+    return $DB->update_record("tab", $tab);
 }
 
 /**
@@ -266,11 +266,11 @@ function recittab_update_instance($recittab)
  * @param int $id Id of the module instance
  * @return boolean Success/Failure
  * */
-function recittab_delete_instance($id)
+function tab_delete_instance($id)
 {
     global $DB;
 
-    if (!$recittab = $DB->get_record("recittab", array("id" => "$id")))
+    if (!$tab = $DB->get_record("tab", array("id" => "$id")))
     {
         return false;
     }
@@ -279,11 +279,11 @@ function recittab_delete_instance($id)
 
     # Delete any dependent records here #
 
-    if (!$DB->delete_records("recittab", array("id" => "$recittab->id")))
+    if (!$DB->delete_records("tab", array("id" => "$tab->id")))
     {
         $result = false;
     }
-    if (!$DB->delete_records("recittab_content", array("tabid" => "$recittab->id")))
+    if (!$DB->delete_records("tab_content", array("tabid" => "$tab->id")))
     {
         $result = false;
     }
@@ -294,23 +294,23 @@ function recittab_delete_instance($id)
 /**
  * Lists all browsable file areas
  *
- * @package  mod_recittab
+ * @package  mod_tab
  * @category files
  * @param stdClass $course course object
  * @param stdClass $cm course module object
  * @param stdClass $context context object
  * @return array
  */
-function recittab_get_file_areas($course, $cm, $context) {
+function tab_get_file_areas($course, $cm, $context) {
     $areas = array();
-    $areas['content'] = get_string('content', 'recittab');
+    $areas['content'] = get_string('content', 'tab');
     return $areas;
 }
 
 /**
  * File browsing support for languagelab module content area.
  *
- * @package  mod_recittab
+ * @package  mod_tab
  * @category files
  * @param stdClass $browser file browser instance
  * @param stdClass $areas file areas
@@ -323,7 +323,7 @@ function recittab_get_file_areas($course, $cm, $context) {
  * @param string $filename file name
  * @return file_info instance or null if not found
  */
-function recittab_get_file_info($browser, $areas, $course, $cm, $context, $filearea, $itemid, $filepath, $filename) {
+function tab_get_file_info($browser, $areas, $course, $cm, $context, $filearea, $itemid, $filepath, $filename) {
     global $CFG;
 
     if (!has_capability('moodle/course:managefiles', $context)) {
@@ -338,16 +338,16 @@ function recittab_get_file_info($browser, $areas, $course, $cm, $context, $filea
         $filename = is_null($filename) ? '.' : $filename;
 
         $urlbase = $CFG->wwwroot.'/pluginfile.php';
-        if (!$storedfile = $fs->get_file($context->id, 'mod_recittab', 'content', $itemid, $filepath, $filename)) {
+        if (!$storedfile = $fs->get_file($context->id, 'mod_tab', 'content', $itemid, $filepath, $filename)) {
             if ($filepath === '/' and $filename === '.') {
-                $storedfile = new virtual_root_file($context->id, 'mod_recittab', 'content', $itemid);
+                $storedfile = new virtual_root_file($context->id, 'mod_tab', 'content', $itemid);
             } else {
                 // not found
                 return null;
             }
         }
-        require_once("$CFG->dirroot/mod/recittab/locallib.php");
-        return new recittab_content_file_info($browser, $context, $storedfile, $urlbase, $areas[$filearea], true, true, true, false);
+        require_once("$CFG->dirroot/mod/tab/locallib.php");
+        return new tab_content_file_info($browser, $context, $storedfile, $urlbase, $areas[$filearea], true, true, true, false);
     }
 
     // note: page_intro handled in file_browser automatically
@@ -368,7 +368,7 @@ function recittab_get_file_info($browser, $areas, $course, $cm, $context, $filea
  * @param bool $forcedownload
  * @return bool false if file not found, does not return if found - justsend the file
  */
-function recittab_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload)
+function tab_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload)
 {
     global $CFG, $DB;
 
@@ -380,21 +380,21 @@ function recittab_pluginfile($course, $cm, $context, $filearea, $args, $forcedow
         return false;
     }
 
-    $fileareas = array('mod_recittab', 'content');
+    $fileareas = array('mod_tab', 'content');
     if (!in_array($filearea, $fileareas))
     {
         return false;
     }
     //id of the content row
-    $recittabcontentid = (int) array_shift($args);
+    $tabcontentid = (int) array_shift($args);
 
     //Security - Check if exists
-    if (!$recittabcontent = $DB->get_record('recittab_content', array('id' => $recittabcontentid)))
+    if (!$tabcontent = $DB->get_record('tab_content', array('id' => $tabcontentid)))
     {
         return false;
     }
 
-    if (!$recittab = $DB->get_record('recittab', array('id' => $cm->instance)))
+    if (!$tab = $DB->get_record('tab', array('id' => $cm->instance)))
     {
         return false;
     }
@@ -402,7 +402,7 @@ function recittab_pluginfile($course, $cm, $context, $filearea, $args, $forcedow
     //Now gather file information
     $fs = get_file_storage();
     $relativepath = implode('/', $args);
-    $fullpath = "/$context->id/mod_recittab/$filearea/$recittabcontentid/$relativepath";
+    $fullpath = "/$context->id/mod_tab/$filearea/$tabcontentid/$relativepath";
 
     if (!$file = $fs->get_file_by_hash(sha1($fullpath)) or $file->is_directory())
     {
@@ -424,12 +424,12 @@ function recittab_pluginfile($course, $cm, $context, $filearea, $args, $forcedow
  * @return null
  * @todo Finish documenting this function
  * */
-function recittab_user_outline($course, $user, $mod, $recittab)
+function tab_user_outline($course, $user, $mod, $tab)
 {
     global $DB;
 
-    if ($logs = $DB->get_records('log', array('userid' => $user->id, 'module' => 'recittab',
-        'action' => 'view', 'info' => $recittab->id. ' - '.$recittab->name), 'time ASC'))
+    if ($logs = $DB->get_records('log', array('userid' => $user->id, 'module' => 'tab',
+        'action' => 'view', 'info' => $tab->id. ' - '.$tab->name), 'time ASC'))
     {
 
         $numviews = count($logs);
@@ -453,12 +453,12 @@ function recittab_user_outline($course, $user, $mod, $recittab)
  * @return boolean
  * @todo Finish documenting this function
  * */
-function recittab_user_complete($course, $user, $mod, $recittab)
+function tab_user_complete($course, $user, $mod, $tab)
 {
     global $CFG, $DB;
 
-    if ($logs = $DB->get_records('log', array('userid' => $user->id, 'module' => 'recittab',
-        'action' => 'view', 'info' => $recittab->id. ' - '.$recittab->name), 'time ASC'))
+    if ($logs = $DB->get_records('log', array('userid' => $user->id, 'module' => 'tab',
+        'action' => 'view', 'info' => $tab->id. ' - '.$tab->name), 'time ASC'))
     {
         $numviews = count($logs);
         $lastlog = array_pop($logs);
@@ -470,7 +470,7 @@ function recittab_user_complete($course, $user, $mod, $recittab)
     }
     else
     {
-        print_string('neverseen', 'recittab');
+        print_string('neverseen', 'tab');
     }
 }
 
@@ -502,18 +502,18 @@ function tab_print_recent_activity($course, $viewfullnames, $timestart)
  * @param object $coursemodule
  * @return object info
  */
-function recittab_get_coursemodule_info($coursemodule)
+function tab_get_coursemodule_info($coursemodule)
 {
     global $CFG, $DB;
     require_once("$CFG->libdir/resourcelib.php");
 
-    if (!$recittab = $DB->get_record('recittab', array('id' => $coursemodule->instance), 'id, name'))
+    if (!$tab = $DB->get_record('tab', array('id' => $coursemodule->instance), 'id, name'))
     {
         return NULL;
     }
 
     $info = new stdClass();
-    $info->name = $recittab->name;
+    $info->name = $tab->name;
 
     return $info;
 }

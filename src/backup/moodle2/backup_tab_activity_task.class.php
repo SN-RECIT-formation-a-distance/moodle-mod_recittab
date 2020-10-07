@@ -14,8 +14,8 @@
  * *************************************************************************
  * ************************************************************************ */
 
-require_once($CFG->dirroot . '/mod/recittab/backup/moodle2/backup_tab_stepslib.php'); // Because it exists (must)
-require_once($CFG->dirroot . '/mod/recittab/backup/moodle2/backup_tab_settingslib.php'); // Because it exists (optional)
+require_once($CFG->dirroot . '/mod/tab/backup/moodle2/backup_tab_stepslib.php'); // Because it exists (must)
+require_once($CFG->dirroot . '/mod/tab/backup/moodle2/backup_tab_settingslib.php'); // Because it exists (optional)
 
 /**
  * choice backup task that provides all the settings and steps to perform one

@@ -17,12 +17,12 @@ defined('MOODLE_INTERNAL') || die;
 
 require_once("$CFG->libdir/filelib.php");
 require_once("$CFG->libdir/resourcelib.php");
-require_once("$CFG->dirroot/mod/recittab/lib.php");
+require_once("$CFG->dirroot/mod/tab/lib.php");
 
 /**
  * File browsing support class
  */
-class recittab_content_file_info extends file_info_stored {
+class tab_content_file_info extends file_info_stored {
 
     /**
      * Returns parent file_info instance
@@ -54,7 +54,7 @@ class recittab_content_file_info extends file_info_stored {
  * @param type $context The context ID
  * @return array The array of options for the editor 
  */
-function recittab_get_editor_options($context) {
+function tab_get_editor_options($context) {
     global $CFG;
     return array('subdirs' => 1, 'maxbytes' => $CFG->maxbytes, 'maxfiles' => -1, 'changeformat' => 1, 'context' => $context, 'noclean' => 1, 'trusttext' => 0);
 }
@@ -93,7 +93,7 @@ function process_urls($string) {
  * @param string $clicktoopen
  * @return string html
  */
-function recittab_embed_general($fullurl, $title, $clicktoopen, $mimetype) {
+function tab_embed_general($fullurl, $title, $clicktoopen, $mimetype) {
     global $CFG, $PAGE;
 
     $iframe = true;
@@ -120,7 +120,7 @@ EOT;
 EOT;
     }
 
-    $PAGE->requires->js_init_call('M.mod_recittab.init_maximised_embed', array("resourceobject_$id_suffix"), true);
+    $PAGE->requires->js_init_call('M.mod_tab.init_maximised_embed', array("resourceobject_$id_suffix"), true);
 
     return $code;
 }
