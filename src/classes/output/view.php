@@ -91,6 +91,15 @@ class view implements \renderable, \templatable {
             case 8:
                 $classrecitstyle = "recit_tab_8" ;
                 break;
+            case 9:
+                $classrecitstyle = "recit_tab_9" ;
+                break;
+            case 10:
+                $classrecitstyle = "recit_tab_10" ;
+                break;
+            case 11:
+                $classrecitstyle = "recit_tab_11" ;
+                break;
             default: $classrecitstyle = "recit_tab_2" ;
                 break;
     }
