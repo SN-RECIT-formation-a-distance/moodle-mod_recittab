@@ -37,7 +37,7 @@ class mod_tab_mod_form extends moodleform_mod
 
         $config = get_config('tab');
         $tabstyleoptions = array(
-            0 => 'Boostrap',
+            0 => 'Recit_fad_0',
             1 => 'Recit_fad_1',
             2 => 'Recit_fad_2',
             3 => 'Recit_fad_3',
@@ -48,7 +48,7 @@ class mod_tab_mod_form extends moodleform_mod
             8 => 'Recit_fad_8',
             9 => 'Recit_fad_9',
             10 => 'Recit_fad_10',
-            11 => 'Recit_fad_11'
+            11 => 'Bootstrap'
         );
         $mform->addElement('header', 'general', get_string('general', 'form'));
         $mform->addElement('text', 'name', get_string('name', 'tab'), array('size' => '45'));

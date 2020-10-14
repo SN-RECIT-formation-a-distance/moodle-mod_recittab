@@ -65,7 +65,7 @@ class view implements \renderable, \templatable {
         $classrecit  = $tab->classrecit;
         switch ($classrecit) {
             case 0:
-                $classrecitstyle = "" ;
+                $classrecitstyle = "recit_tab_0" ;
                 break;
             case 1:
                 $classrecitstyle = "recit_tab_1" ;
@@ -100,10 +100,7 @@ class view implements \renderable, \templatable {
             case 11:
                 $classrecitstyle = "recit_tab_11" ;
                 break;
-            case 12:
-                $classrecitstyle = "recit_tab_12" ;
-                break;
-            default: $classrecitstyle = "recit_tab_2" ;
+            default: $classrecitstyle = "recit_tab_0" ;
                 break;
     }
         $data = [
