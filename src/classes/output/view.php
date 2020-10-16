@@ -79,7 +79,7 @@ class view implements \renderable, \templatable {
             case 4:
                 $classrecitstyle = "recit_tab_4" ;
                 break;
-            /*case 5:
+            /case 5:
                 $classrecitstyle = "recit_tab_5" ;
                 break;
             case 6:
@@ -99,7 +99,7 @@ class view implements \renderable, \templatable {
                 break;
             case 11:
                 $classrecitstyle = "recit_tab_11" ;
-                break;*/
+                break;
             default: $classrecitstyle = "recit_tab_0" ;
                 break;
     }
