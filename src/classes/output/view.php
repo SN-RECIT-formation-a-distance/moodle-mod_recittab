@@ -100,6 +100,9 @@ class view implements \renderable, \templatable {
             case 11:
                 $classrecitstyle = "recit_tab_11" ;
                 break;
+            case 12:
+                $classrecitstyle = "recit_tab_12" ;
+                break; 
             default: $classrecitstyle = "recit_tab_0" ;
                 break;
     }

@@ -48,8 +48,8 @@ class mod_tab_mod_form extends moodleform_mod
             8 => 'Recit_tab_8',
             9 => 'Recit_tab_9',
             10 => 'Recit_tab_10',*/
-            11 => 'Bootstrap',
-            /*12 => 'Recit_tab_12'*/
+            11 => 'Recit_tab_12',
+            12 => 'Bootstrap'
         );
         $mform->addElement('header', 'general', get_string('general', 'form'));
         $mform->addElement('text', 'name', get_string('name', 'tab'), array('size' => '45'));
