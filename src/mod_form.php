@@ -41,7 +41,7 @@ class mod_tab_mod_form extends moodleform_mod
             //1 => 'Recit_tab_1',
            // 2 => 'Recit_tab_2',
             //3 => 'Recit_tab_3',
-            //4 => 'Recit_tab_4',
+            4 => 'Recit_tab_4',
             //5 => 'Recit_tab_5',
             //6 => 'Recit_tab_6',
             7 => 'Recit_tab_7',
