@@ -15,7 +15,7 @@
  * ************************************************************************ */
 $plugin->version = 2019062402;  // The current module version (Date: YYYYMMDDXX)
 $plugin->requires = 2019052000;
-$plugin->release = 'R11-V1.11.0'; 
+$plugin->release = 'R11-V1.12.0'; 
 $plugin->maturity = MATURITY_BETA; // MATURITY_ALPHA, MATURITY_BETA, MATURITY_RC or MATURITY_STABLE
 $plugin->cron = 0;           // Period for cron to check this module (secs)
 $plugin->component = 'mod_tab';
