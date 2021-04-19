@@ -53,3 +53,4 @@ $string['tab:addinstance'] = 'Add a new Tab Display';
 $string['tab:view'] = 'View Tabs';
 $string['updatethis'] = 'Update this tab display';
 $string['tabstyle'] = "Tab style";
+$string['neverseen'] = "Never seen";
