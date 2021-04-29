@@ -40,3 +40,4 @@ $string['embed_fail_msg_ie'] = '<p>Unable to embed external link. Internet Explo
 $string['tab:addinstance'] = 'Ajouter un nouvel affichage par onglets';
 $string['tab:view'] = 'Afficher l\'affichage par onglets';
 $string['tabstyle'] = "Style d'onglets";
+$string['neverseen'] = "Jamais consulté";

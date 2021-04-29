@@ -1,5 +1,910 @@
-.mod-tab-embedded{
+/**************************************
+ * FONTS
+ *************************************/
+/**************************************
+ * COLORS
+ *************************************/
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\0000363}}
+.mod-tab-embedded {
+  border: none;
+  width: 100%;
+  height: 800px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\0000373}}
+.tabs-color1 .nav-tabs a:hover, .tabs-color1 .nav-tabs a.active {
+  background: #0069bf; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\0000376}}
+.tabs-color1 .nav-tabs .nav-item.a:before {
+  content: '';
+  background: #0069bf; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\0000382}}
+.tabs-color2 .nav-tabs a:hover, .tabs-color2 .nav-tabs a.active {
+  background: #494755; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\0000385}}
+.tabs-color2 .nav-tabs .nav-item.a:before {
+  content: '';
+  background: #494755; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\0000391}}
+.tabs-color3 .nav-tabs a:hover, .tabs-color3 .nav-tabs a.active {
+  background: #384f5c; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\0000394}}
+.tabs-color3 .nav-tabs .nav-item.a:before {
+  content: '';
+  background: #384f5c; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003100}}
+.tabs-color4 .nav-tabs a:hover, .tabs-color4 .nav-tabs a.active {
+  background: #49a7d5; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003103}}
+.tabs-color4 .nav-tabs .nav-item.a:before {
+  content: '';
+  background: #49a7d5; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003109}}
+.tabs-color5 .nav-tabs a:hover, .tabs-color5 .nav-tabs a.active {
+  background: #EAC167; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003112}}
+.tabs-color5 .nav-tabs .nav-item.a:before {
+  content: '';
+  background: #EAC167; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003118}}
+.tabrecit_tab_14 {
+    /*
+    .tab-content {
+       color: #333;
+       background: linear-gradient(to right bottom, #f5f5f5 50%, transparent 50%);
+       font-size: 14px;
+       letter-spacing: 1px;
+       line-height: 25px;
+       padding: 20px;
+       border-top: 4px solid $secondary;
+       border-left: 4px solid $secondary;
+        position: relative;
+    }
+
+    .tab-content h3 {
+        color: $secondary;
+        font-size: 22px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin: 0 0 7px 0;
+    }
+*/ }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003121}}
+  .tabrecit_tab_14 a:hover,
+  .tabrecit_tab_14 a:focus {
+    text-decoration: none;
+    outline: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003127}}
+  .tabrecit_tab_14 .nav-tabs {
+    background-color: transparent;
+    border: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003132}}
+  .tabrecit_tab_14 .nav-tabs a {
+    color: #333;
+    background: #f5f5f5;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 11px 15px 10px;
+    margin: 0 10px 1px 0;
     border: none;
-    width: 100%; 
-    height: 800px;
-}
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease 0s; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003151}}
+  .tabrecit_tab_14 .nav-tabs:last-child a {
+    margin-right: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003155}}
+  .tabrecit_tab_14 .nav-tabs a:hover,
+  .tabrecit_tab_14 .nav-tabs a.active {
+    color: #fff;
+    border: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003162}}
+  .tabrecit_tab_14 .nav-tabs .nav-item.a:before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transform: scale(0.5);
+    position: absolute;
+    left: 50%;
+    top: 0;
+    z-index: -1;
+    transition: opacity 0.4s ease 0s, left 0.3s ease 0s, transform 0.4s ease 0.2s; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003176}}
+  .tabrecit_tab_14 .nav-tabs .nav-item.active a:before,
+  .tabrecit_tab_14 .nav-tabs .nav-item:hover:before {
+    opacity: 1;
+    transform: scale(1);
+    left: 0; }
+  @media only screen and (max-width: 479px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003206}}
+    .tabrecit_tab_14 .nav-tabs {
+      width: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003210}}
+    .tabrecit_tab_14 .nav-tabs a {
+      margin: 0 0 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003214}}
+    .tabrecit_tab_14 .tab-content h3 {
+      font-size: 18px; } }
+
+/*Mod_tab*/
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003224}}
+.tabrecit_tab_11 .nav-tabs {
+  position: relative;
+  border-bottom: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003228}}
+  .tabrecit_tab_11 .nav-tabs li {
+    text-align: center;
+    margin-right: 3px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003233}}
+  .tabrecit_tab_11 .nav-tabs li a {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #e69321;
+    text-transform: uppercase;
+    padding: 15px;
+    background: #fff;
+    margin-right: 0;
+    border-radius: 0;
+    border: none;
+    position: relative;
+    transition: all 0.5s ease 0s; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003248}}
+  .tabrecit_tab_11 .nav-tabs li a:before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: transparent;
+    position: absolute;
+    margin-left: -20px;
+    bottom: 0;
+    left: 50%;
+    transition: all 0.2s ease 0s; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003261}}
+  .tabrecit_tab_11 .nav-tabs li a:hover:before,
+  .tabrecit_tab_11 .nav-tabs li a.active:before {
+    background: #0069bf; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003266}}
+  .tabrecit_tab_11 .nav-tabs li a:after {
+    content: "";
+    width: 0;
+    height: 1px;
+    background: #0069bf;
+    margin-left: -15px;
+    position: absolute;
+    bottom: 6%;
+    left: 50%;
+    transition: all 0.2s ease 0s; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003278}}
+  .tabrecit_tab_11 .nav-tabs li a:hover:after,
+  .tabrecit_tab_11 .nav-tabs li a.active:after {
+    width: 35px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003283}}
+  .tabrecit_tab_11 .nav-tabs li a.active,
+  .tabrecit_tab_11 .nav-tabs li a.active:focus,
+  .tabrecit_tab_11 .nav-tabs li a.active:hover,
+  .tabrecit_tab_11 .nav-tabs li a:hover {
+    border: none;
+    color: #0069bf; }
+@media only screen and (max-width: 479px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003293}}
+  .tabrecit_tab_11 .nav-tabs li {
+    width: 100%;
+    margin-bottom: 5px; } }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003301}}
+.tabrecit_tab_10 .nav-tabs {
+  border-bottom: 0 none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003304}}
+  .tabrecit_tab_10 .nav-tabs li {
+    margin-right: 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003308}}
+  .tabrecit_tab_10 .nav-tabs li a {
+    position: relative;
+    padding: 15px;
+    color: #fff;
+    font-size: 17px;
+    z-index: 1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003316}}
+  .tabrecit_tab_10 .nav-tabs li a:hover {
+    background: transparent;
+    border: 1px solid transparent; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003321}}
+  .tabrecit_tab_10 .nav-tabs li a:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 8px;
+    left: -1px;
+    font-size: 17px;
+    background: #0069bf;
+    border: 1px solid #d3d3d3;
+    border-bottom: 0px none;
+    border-radius: 10px 10px 0 0;
+    transform-origin: left center 0;
+    transform: perspective(4px) rotateX(2deg);
+    z-index: -1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003338}}
+  .tabrecit_tab_10 .nav-tabs li a.active:before {
+    background: #e69321; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003342}}
+  .tabrecit_tab_10 .nav-tabs li a.active,
+  .tabrecit_tab_10 .nav-tabs li a.active:focus,
+  .tabrecit_tab_10 .nav-tabs li a.active:hover {
+    border: 1px solid transparent;
+    background: transparent;
+    color: #444;
+    z-index: 2; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003352}}
+.tabrecit_tab_10 .tab-content .tab-pane {
+  min-height: 400px;
+  border: 1px solid #0069bf;
+  padding: 20px;
+  background: #fff;
+  line-height: 22px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003360}}
+.tabrecit_tab_10 .tab-content .tab-pane h3 {
+  margin-top: 0; }
+@media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003365}}
+  .tabrecit_tab_10 .nav-tabs li a {
+    padding: 15px 10px;
+    font-size: 14px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003370}}
+  .tabrecit_tab_10 .nav-tabs li a:before {
+    bottom: 6px; } }
+@media only screen and (max-width: 480px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003376}}
+  .tabrecit_tab_10 .nav-tabs li {
+    width: 100%;
+    margin-bottom: 5px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003381}}
+  .tabrecit_tab_10 .nav-tabs li a:before {
+    bottom: 0;
+    transform: none;
+    border-bottom: 1px solid #d3d3d3; } }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003391}}
+.tabrecit_tab_9 .nav-tabs {
+  border-bottom: 0 none;
+  margin-top: 20px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003395}}
+  .tabrecit_tab_9 .nav-tabs li a {
+    font-size: 14px;
+    color: #fff;
+    margin-right: 0;
+    padding: 10px 45px;
+    border-radius: 0;
+    overflow: hidden;
+    background: #0069bf;
+    text-transform: uppercase;
+    box-shadow: 8px 12px 25px 2px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease 0s;
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003411}}
+  .tabrecit_tab_9 .nav-tabs li:first-child a {
+    border-top-left-radius: 8px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003415}}
+  .tabrecit_tab_9 .nav-tabs li:last-child a {
+    border-top-right-radius: 8px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003419}}
+  .tabrecit_tab_9 .nav-tabs li a:hover,
+  .tabrecit_tab_9 .nav-tabs li.active a:hover,
+  .tabrecit_tab_9 .nav-tabs li.active a {
+    background: #e69321;
+    color: #fff;
+    margin-top: -19px;
+    padding: 20px 45px;
+    border: 1px solid #e69321; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003429}}
+  .tabrecit_tab_9 .nav-tabs .tab-content {
+    color: #fff;
+    padding: 25px 20px;
+    background: #e69321;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 8px 12px 25px 2px rgba(0, 0, 0, 0.4); }
+@media only screen and (max-width: 650px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003439}}
+  .tabrecit_tab_9 .nav-tabs li {
+    width: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003443}}
+  .tabrecit_tab_9 .nav-tabs li a {
+    margin: 0;
+    padding: 20px 45px;
+    box-shadow: -2px -1px 25px 2px rgba(0, 0, 0, 0.4); }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003449}}
+  .tabrecit_tab_9 .nav-tabs li:first-child a,
+  .tabrecit_tab_9 .nav-tabs li:last-child a {
+    border-radius: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003454}}
+  .tabrecit_tab_9 .nav-tabs li a:hover,
+  .tabrecit_tab_9 .nav-tabs li.active a:hover,
+  .tabrecit_tab_9 .nav-tabs li.active a {
+    margin: 0; } }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003463}}
+.tabrecit_tab_8 .nav-tabs {
+  border-bottom: 2px solid #e8e8e8; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003467}}
+.tabrecit_tab_8 .nav-tabs .nav-item .nav-link {
+  display: block;
+  padding: 10px 20px;
+  margin: 0 5px 1px 0;
+  background: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  color: #112529;
+  text-align: center;
+  border: none;
+  border-radius: 0;
+  z-index: 2;
+  position: relative;
+  transition: all 0.3s ease 0s; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003483}}
+.tabrecit_tab_8 .nav-tabs .nav-item .nav-link:hover,
+.tabrecit_tab_8 .nav-tabs .nav-item .nav-link.active {
+  color: #0069bf;
+  border: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003489}}
+.tabrecit_tab_8 .nav-tabs .nav-item .nav-link.active:before {
+  content: "\f107";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 25px;
+  font-weight: 700;
+  color: #0069bf;
+  margin: 0 auto;
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  right: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003503}}
+.tabrecit_tab_8 .nav-tabs .nav-item .nav-link.active:after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background: #0069bf;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  z-index: -1;
+  transition: all 0.3s ease 0s; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003515}}
+.tabrecit_tab_8 .tab-content {
+  padding: 30px 20px 20px;
+  margin-top: 0;
+  background: #fff;
+  font-size: 15px;
+  color: #022f53;
+  line-height: 30px;
+  border-radius: 0 0 5px 5px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003525}}
+.tabrecit_tab_8 .tab-content h3 {
+  font-size: 24px;
+  margin-top: 0; }
+@media only screen and (max-width: 479px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003531}}
+  .tabrecit_tab_8 .nav-tabs .nav-item {
+    width: 100%;
+    text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003536}}
+  .tabrecit_tab_8 .nav-tabs .nav-item.active a:before {
+    content: "\f105";
+    bottom: 15%;
+    left: 0;
+    right: auto; } }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003546}}
+.tabrecit_tab_7 .recit-section-text {
+  color: #373a3c; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003550}}
+.tabrecit_tab_7 .recit-section-subtitle {
+  color: #373a3c; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003554}}
+.tabrecit_tab_7 .tabcont {
+  -webkit-justify-content: center;
+  justify-content: center; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003559}}
+.tabrecit_tab_7 .recit-iconfont {
+  font-size: 48px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003563}}
+.tabrecit_tab_7 .card-img {
+  margin-bottom: 1.5rem; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003567}}
+.tabrecit_tab_7 .tab-content-row {
+  -webkit-justify-content: center;
+  justify-content: center; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003573}}
+.tabrecit_tab_7 .nav-tabs {
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  border-bottom: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003581}}
+.tabrecit_tab_7 .nav-tabs .nav-link {
+  box-sizing: border-box;
+  color: #373a3c;
+  font-style: normal;
+  font-weight: 500;
+  border-radius: 3px;
+  padding: 1rem 3rem;
+  margin: 0.4rem .8rem !important;
+  border: 2px solid #373a3c; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003593}}
+.tabrecit_tab_7 .nav-tabs .nav-link:hover {
+  background: #e69321;
+  color: #ffffff;
+  border-color: #e69321; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003599}}
+.tabrecit_tab_7 .nav-tabs .nav-link.active {
+  color: #ffffff;
+  font-style: normal;
+  background: #e69321;
+  border-color: #e69321; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003609}}
+.tabrecit_tab_6 {
+  font-family: 'Nunito', sans-serif; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003612}}
+  .tabrecit_tab_6 a:hover,
+  .tabrecit_tab_6 a:focus {
+    text-decoration: none;
+    outline: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003618}}
+  .tabrecit_tab_6 .nav-tabs {
+    background-color: transparent;
+    border: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003623}}
+  .tabrecit_tab_6 .nav-tabs li a {
+    color: #222;
+    background: transparent;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 15px 15px 10px;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease 0s; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003641}}
+  .tabrecit_tab_6 .nav-tabs li:last-child a {
+    margin-right: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003645}}
+  .tabrecit_tab_6 .nav-tabs li a:hover,
+  .tabrecit_tab_6 .nav-tabs li.active a {
+    color: #222;
+    background: #fff;
+    border: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003652}}
+  .tabrecit_tab_6 .nav-tabs li a.active {
+    color: #B7D233; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003656}}
+  .tabrecit_tab_6 .nav-tabs li a:before,
+  .tabrecit_tab_6 .nav-tabs li a:after {
+    content: "";
+    background-color: #d1d1d1;
+    height: 7px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.5s ease 0s; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003669}}
+  .tabrecit_tab_6 .nav-tabs li a:after {
+    background-color: #B7D233;
+    height: 100%;
+    opacity: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003675}}
+  .tabrecit_tab_6 .nav-tabs li.active a:before,
+  .tabrecit_tab_6 .nav-tabs li a:hover:before {
+    height: 100%;
+    opacity: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003681}}
+  .tabrecit_tab_6 .nav-tabs li.active a:after,
+  .tabrecit_tab_6 .nav-tabs li a:hover:after {
+    height: 7px;
+    opacity: 1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003687}}
+  .tabrecit_tab_6 .tab-content {
+    color: #555;
+    background: #fff;
+    font-size: 15px;
+    letter-spacing: 1px;
+    line-height: 23px;
+    padding: 20px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003696}}
+  .tabrecit_tab_6 .tab-content h3 {
+    color: #222;
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 7px 0; }
+  @media only screen and (max-width: 479px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003706}}
+    .tabrecit_tab_6 .nav-tabs li {
+      width: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003710}}
+    .tabrecit_tab_6 .nav-tabs li a {
+      margin: 0 0 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003714}}
+    .tabrecit_tab_6 .tab-content h3 {
+      font-size: 18px; } }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003724}}
+.tabrecit_tab_5 a:hover,
+.tabrecit_tab_5 a:focus {
+  outline: none;
+  text-decoration: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003730}}
+.tabrecit_tab_5 .nav-tabs {
+  padding-left: 15px;
+  border-bottom: 4px solid #e69321; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003735}}
+.tabrecit_tab_5 .nav-tabs a {
+  color: #fff;
+  padding: 10px 20px;
+  margin-right: 10px;
+  background: #e69321;
+  text-shadow: 1px 1px 2px #000;
+  border: none;
+  border-radius: 0;
+  opacity: 0.5;
+  position: relative;
+  transition: all 0.3s ease 0s; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003748}}
+.tabrecit_tab_5 .nav-tabs a:hover {
+  background: #e69321;
+  opacity: 0.8; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003753}}
+.tabrecit_tab_5 .nav-tabs a.active {
+  opacity: 1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003757}}
+.tabrecit_tab_5 .nav-tabs a.active,
+.tabrecit_tab_5 .nav-tabs .active a:hover,
+.tabrecit_tab_5 .nav-tabs .active a:focus {
+  color: #fff;
+  background: #e69321;
+  border: none;
+  border-radius: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003766}}
+.tabrecit_tab_5 .nav-tabs a:before,
+.tabrecit_tab_5 .nav-tabs a:after {
+  content: "";
+  border-top: 42px solid transparent;
+  position: absolute;
+  top: -2px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003774}}
+.tabrecit_tab_5 .nav-tabs a:before {
+  border-right: 15px solid #e69321;
+  left: -15px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003779}}
+.tabrecit_tab_5 .nav-tabs a:after {
+  border-left: 15px solid #e69321;
+  right: -15px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003784}}
+.tabrecit_tab_5 .nav-tabs a i,
+.tabrecit_tab_5 .nav-tabs .active a i {
+  display: inline-block;
+  padding-right: 5px;
+  font-size: 15px;
+  text-shadow: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003792}}
+.tabrecit_tab_5 .nav-tabs a span {
+  display: inline-block;
+  font-size: 14px;
+  letter-spacing: -9px;
+  opacity: 0;
+  transition: all 0.3s ease 0s; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003800}}
+.tabrecit_tab_5 .nav-tabs a:hover span,
+.tabrecit_tab_5 .nav-tabs .active a span {
+  letter-spacing: 1px;
+  opacity: 1;
+  transition: all 0.3s ease 0s; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003807}}
+.tabrecit_tab_5 .tab-content {
+  padding: 30px;
+  background: #fff;
+  font-size: 16px;
+  color: #6c6c6c;
+  line-height: 25px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003815}}
+.tabrecit_tab_5 .tab-content h3 {
+  font-size: 24px;
+  margin-top: 0; }
+@media only screen and (max-width: 479px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003821}}
+  .tabrecit_tab_5 .nav-tabs .tab-items {
+    width: 100%;
+    margin-bottom: 5px;
+    text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003827}}
+  .tabrecit_tab_5 nav-tabs a span {
+    letter-spacing: 1px;
+    opacity: 1; } }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003834}}
+.tabrecit_tab_4 {
+  font-family: 'Sora', sans-serif;
+  /*
+  .tab-content h3 {
+      color: $secondary;
+      font-size: 22px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 0 0 7px 0;
+  }
+  */ }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003839}}
+  .tabrecit_tab_4 a:hover,
+  .tabrecit_tab_4 a:focus {
+    text-decoration: none;
+    outline: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003845}}
+  .tabrecit_tab_4 .nav-tabs {
+    background-color: transparent;
+    border: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003850}}
+  .tabrecit_tab_4 .nav-tabs a {
+    color: #333;
+    background: #f5f5f5;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 11px 15px 10px;
+    margin: 0 10px 1px 0;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease 0s; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003869}}
+  .tabrecit_tab_4 .nav-tabs:last-child a {
+    margin-right: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003873}}
+  .tabrecit_tab_4 .nav-tabs a:hover,
+  .tabrecit_tab_4 .nav-tabs a.active {
+    color: #fff;
+    background: #e69321;
+    border: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003880}}
+  .tabrecit_tab_4 .nav-tabs .nav-item.a:before {
+    content: '';
+    background: #e69321;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transform: scale(0.5);
+    position: absolute;
+    left: 50%;
+    top: 0;
+    z-index: -1;
+    transition: opacity 0.4s ease 0s, left 0.3s ease 0s, transform 0.4s ease 0.2s; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003894}}
+  .tabrecit_tab_4 .nav-tabs .nav-item.active a:before,
+  .tabrecit_tab_4 .nav-tabs .nav-item:hover:before {
+    opacity: 1;
+    transform: scale(1);
+    left: 0; }
+  @media only screen and (max-width: 479px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003924}}
+    .tabrecit_tab_4 .nav-tabs {
+      width: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003928}}
+    .tabrecit_tab_4 .nav-tabs a {
+      margin: 0 0 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003932}}
+    .tabrecit_tab_4 .tab-content h3 {
+      font-size: 18px; } }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003939}}
+.tabrecit_tab_3 .nav-tabs::before {
+  content: "";
+  border: 2px solid #0069bf;
+  position: absolute;
+  top: 44%;
+  width: 100%;
+  z-index: 1000; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003949}}
+.tabrecit_tab_3 .nav-tabs {
+  padding: 10px 0;
+  position: relative;
+  border-bottom: 0 none;
+  display: flex;
+  justify-content: space-between; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003956}}
+  .tabrecit_tab_3 .nav-tabs .nav-item {
+    min-width: 100 px;
+    margin: 0 20px;
+    z-index: 1001; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003963}}
+  .tabrecit_tab_3 .nav-tabs .nav-link:last-child:after {
+    content: "";
+    border: 0 none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003968}}
+  .tabrecit_tab_3 .nav-tabs .nav-link {
+    position: relative;
+    outline: none;
+    color: black;
+    margin-right: 0;
+    padding: 20px 30px;
+    background: #e69321;
+    text-transform: uppercase; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003978}}
+  .tabrecit_tab_3 .nav-tabs .nav-link.active {
+    color: #fff;
+    background: #0069bf;
+    text-transform: uppercase;
+    border: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003986}}
+  .tabrecit_tab_3 .nav-tabs .nav-link.active:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    border-top: 14px solid #0069bf;
+    border-right: 14px solid transparent;
+    border-left: 14px solid transparent;
+    margin-left: -13px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\00003998}}
+.tabrecit_tab_3 .tab-content {
+  min-height: 400px;
+  color: #0069bf;
+  border: 4px solid #0069bf;
+  margin-top: 5px;
+  line-height: 26px;
+  padding: 20px 30px; }
+@media only screen and (max-width: 1280px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\000031008}}
+  .tabrecit_tab_3 .nav-tabs .nav-item .nav-link {
+    padding: 15px 11px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\000031012}}
+  .tabrecit_tab_3 .nav-tabs .nav-item:after {
+    right: -45%;
+    width: 45%; } }
+@media only screen and (max-width: 500px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\000031019}}
+  .tabrecit_tab_3 .nav-tabs .nav-item {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\000031025}}
+  .tabrecit_tab_3 .nav-tabs .nav-item:after,
+  .tabrecit_tab_3 .nav-tabs .nav-item.active .nav-link:before {
+    content: "";
+    border: 0 none; } }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\000031035}}
+.tabrecit_tab_0 .nav-tabs {
+  background-color: #d3e3ed;
+  width: 100%;
+  /* IE Hack to force proper layout when preceded by a paragraph. (hasLayout Bug)*/ }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\000031046}}
+.tabrecit_tab_0 .nav-item {
+  display: flex;
+  align-items: center;
+  /*justify-content: center!important;*/
+  /*align-self: center!important;*/
+  width: auto;
+  max-width: 25%;
+  min-width: 20%;
+  padding: 0px 0px;
+  margin: 0px 0px 0px 0px;
+  font: bold 18px "Viga", sans-serif;
+   /*  background-color: #d3e3ed !important;
+list-style: none !important;
+border-left: none !important;
+border-bottom: none !important;
+border-top: none!important;*/
+  border-right: solid 10px #fff;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  cursor: pointer;
+  border-top-right-radius: 0px !important;
+  border-top-left-radius: 0px !important;
+  color: #FFF;
+  outline: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\000031077}}
+.tabrecit_tab_0 .nav-link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0px 0px;
+  margin: 0px 0px 0px 0px;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  cursor: pointer;
+  border-top-right-radius: 0px !important;
+  border-top-left-radius: 0px !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\000031094}}
+.tabrecit_tab_0 .nav-link,
+.tabrecit_tab_0 .nav-tabs .nav-link.active,
+.tabrecit_tab_0 .nav-tabs .nav-link:hover {
+  color: #ffffff;
+  font-style: normal; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\000031102}}
+.tabrecit_tab_0 .nav-tabs .nav-link.active {
+  background: #0069bf; }
+@media screen and (max-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\000031107}}
+  .tabrecit_tab_0 .nav-item {
+    width: 50%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\000031111}}
+  .tabrecit_tab_0 .nav-item:nth-child(even) {
+    border-right: none; } }
+@media screen and (max-width: 480px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\000031117}}
+  .tabrecit_tab_0 .nav-item {
+    width: 100%;
+    border-right: none; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\000031123}}
+.tabrecit_tab_0 .nav-item:last-child {
+  border-right: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\000031127}}
+.tabrecit_tab_0 .nav-link::before {
+  counter-increment: arts-tab-counter;
+  content: counter(arts-tab-counter,upper-latin);
+  /*display: block;*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  /*background: url("icon.jpg") no-repeat;*/
+  width: 50px;
+  height: 50px;
+  background-color: #afcadb;
+  float: left;
+  margin: 0 10px 0 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/recitfad-vm-devserver\/shared\/moodledev39\/mod\/tab\/styles\.scss}line{font-family:\000031143}}
+.tabrecit_tab_0 .nav-link.active::before,
+.tabrecit_tab_0 .nav-link:hover::before {
+   /* counter-increment: arts-tab-counter;
+content:  counter(arts-tab-counter, upper-latin) ;
+display: block;*/
+  background-color: #005896;
+ /*background: url("icon.jpg") no-repeat;
+width: 50px;
+height: 50px;
+float: left;
+margin: 0 10px 0 0 ;*/ }
+
+/*# sourceMappingURL=styles.css.map */

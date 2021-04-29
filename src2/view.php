@@ -59,23 +59,15 @@ require_capability('mod/tab:view', $context);
 $completion = new completion_info($course);
 $completion->set_module_viewed($cm);
 
-
-    //$PAGE->requires->js('/mod/tab/csscheck.js');
-
- //Gather css
-
- $option  = $DB->get_record('tab', array('printheading' => $tab->printheading), '*', MUST_EXIST);
 // Print the page header
 
 $PAGE->set_url('/mod/tab/view.php', array('id' => $cm->id));
-
-{$PAGE->set_title($tab->name);
-
+$PAGE->set_title($tab->name);
 $PAGE->set_heading(format_string($course->fullname));
-
 $PAGE->set_activity_record($tab);
 
-
+//Gather css
+$PAGE->requires->css('/mod/tab/styles.css');
 
 //log the view information
 $event = \mod_tab\event\course_module_viewed::create(array(
@@ -85,11 +77,10 @@ $event = \mod_tab\event\course_module_viewed::create(array(
 $event->add_record_snapshot('course', $PAGE->course);
 $event->add_record_snapshot($PAGE->cm->modname, $tab);
 $event->trigger();
-//var_dump($option->printheading);
+
 echo $OUTPUT->header();
-if($option->printheading=="1")
 echo $OUTPUT->heading(format_string($tab->name), 2, 'main', 'pageheading');
-    }
+
 
 $output = $PAGE->get_renderer('mod_tab');
 $view = new \mod_tab\output\view($tab,$course->id, $cm);

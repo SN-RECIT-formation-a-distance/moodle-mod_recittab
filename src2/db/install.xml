@@ -19,10 +19,7 @@
         <FIELD NAME="legacyfileslast" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false" PREVIOUS="legacyfiles" NEXT="timemodified"/>
         <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="legacyfileslast" NEXT="introformat"/>
         <FIELD NAME="introformat" TYPE="int" LENGTH="4" NOTNULL="false" SEQUENCE="false" NEXT="classrecit" PREVIOUS="timemodified"/>
-        <FIELD NAME="classrecit" TYPE="int" LENGTH="4" DEFAULT="2" NOTNULL="false" SEQUENCE="false" PREVIOUS="listactivity"/>
-        <FIELD NAME="listactivity" TYPE="text" NOTNULL="false" SEQUENCE="false" PREVIOUS="introformat" NEXT="printheading"/>
-        <FIELD NAME="printheading" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="listactivity" />
-        
+        <FIELD NAME="classrecit" TYPE="int" LENGTH="4" DEFAULT="2" NOTNULL="false" SEQUENCE="false" PREVIOUS="introformat"/>
       </FIELDS>
       <KEYS>
         <KEY NAME="primary" TYPE="primary" FIELDS="id"/>

@@ -30,7 +30,7 @@
                 <ul class="list-group">
                     {{#items}}
                     <li class="list-group-item">
-                        <a href="{{{ config.wwwroot }}}/mod/{{{modname}}}/view.php?id={{{id}}}" title="{{{name}}}">{{{name}}}</a>
+                        <a href="view.php?id={{{id}}}" title="{{{name}}}">{{{name}}}</a>
                     </li>
                     {{/items}}
                 </ul>
@@ -42,7 +42,7 @@
     
     <div class=" {{{classrecit}}} col{{#showMenu}}-md-9{{/showMenu}}" id="TabbedPanelsTabGroup" role="tablist">
        
-     <ul class="  nav nav-tabs nav-fill overflow-hidden" id="TabbedPanelsTabGroup" role="tablist">
+     <ul class="  nav nav-tabs nav-fill" id="TabbedPanelsTabGroup" role="tablist">
             {{#tabs}}
            <li class="nav-item ">
                 <a class=" nav-link {{#active}}active{{/active}}" id="tab-{{{id}}}" data-toggle="tab" href="#tab{{{id}}}" role="tab" aria-controls="tab{{{id}}}"><span>{{{name}}}</span></a>

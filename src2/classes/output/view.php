@@ -65,45 +65,45 @@ class view implements \renderable, \templatable {
         $classrecit  = $tab->classrecit;
         switch ($classrecit) {
             case 0:
-                $classrecitstyle = "recit_tab_0 tabrecit_tab_0" ;
+                $classrecitstyle = "recit_tab_0" ;
                 break;
             case 1:
-                $classrecitstyle = "recit_tab_1 tabrecit_tab_1" ;
+                $classrecitstyle = "recit_tab_1" ;
                 break;
             case 2:
-                $classrecitstyle = "recit_tab_2 tabrecit_tab_2" ;
+                $classrecitstyle = "recit_tab_2" ;
                 break;
             case 3:
-                $classrecitstyle = "recit_tab_3 tabrecit_tab_3" ;
+                $classrecitstyle = "recit_tab_3" ;
                 break;
             case 4:
-                $classrecitstyle = "recit_tab_4 tabrecit_tab_4" ;
+                $classrecitstyle = "recit_tab_4" ;
                 break;
             case 5:
-                $classrecitstyle = "recit_tab_5 tabrecit_tab_5" ;
+                $classrecitstyle = "recit_tab_5" ;
                 break;
             case 6:
-                $classrecitstyle = "recit_tab_6 tabrecit_tab_6" ;
+                $classrecitstyle = "recit_tab_6" ;
                 break;
             case 7:
-                $classrecitstyle = "recit_tab_7 tabrecit_tab_7" ;
+                $classrecitstyle = "recit_tab_7" ;
                 break;
             case 8:
-                $classrecitstyle = "recit_tab_8 tabrecit_tab_8" ;
+                $classrecitstyle = "recit_tab_8" ;
                 break;
             case 9:
-                $classrecitstyle = "recit_tab_9 tabrecit_tab_9" ;
+                $classrecitstyle = "recit_tab_9" ;
                 break;
             case 10:
-                $classrecitstyle = "recit_tab_10 tabrecit_tab_10" ;
+                $classrecitstyle = "recit_tab_10" ;
                 break;
             case 11:
-                $classrecitstyle = "recit_tab_11 tabrecit_tab_11" ;
+                $classrecitstyle = "recit_tab_11" ;
                 break;
             case 12:
-                $classrecitstyle = "recit_tab_12 tabrecit_tab_12" ;
+                $classrecitstyle = "recit_tab_12" ;
                 break; 
-            default: $classrecitstyle = "recit_tab_0 tabrecit_tab_0" ;
+            default: $classrecitstyle = "recit_tab_0" ;
                 break;
     }
         $data = [
@@ -118,50 +118,45 @@ class view implements \renderable, \templatable {
 
         return $data;
     }
-    
-   private function getTabMenuContent() {
-        global $PAGE;
-        //Détermine les activités du cours
-        
-        $course = $PAGE->course->id;
-        $modinfo = get_fast_modinfo($course);
-        $activities = [];
-        $i=0;
-            foreach ($modinfo->get_cms() as $cminfo) {
-                $activities[$i]['modname']= $cminfo->modname;
-                $activities[$i]['id']= $cminfo->id;
-                $activities[$i]['in']= $cminfo->instance;
-                $activities[$i]['name']= $cminfo->get_formatted_name();
-                $i++;
-                }
-        //Activités à afficher dans le bloc        
-        $tab = $this->tab;
-        $listactivity  = $tab->listactivity;
-            if (!isset ($listactivity)){
-            return;
-            }
-        $tactivities =[];
-        $tactivities = explode(",", $listactivity);
-        //Compare la liste d,activité àux activités du cours
+
+    private function getTabMenuContent() {
+        global $DB;
+
+        $contentSql = 'SELECT {course_modules}.id as id,
+            {course_modules}.visible as visible, 
+            {tab}.name as name, 
+            {tab}.taborder as taborder,
+            {tab}.menuname as menuname 
+            FROM ({modules} INNER JOIN {course_modules} ON {modules}.id = {course_modules}.module)
+            INNER JOIN {tab} ON {course_modules}.instance = {tab}.id 
+            WHERE ((({modules}.name)=\'tab\') AND (({course_modules}.course)=?))
+            ORDER BY taborder;';
+
+        $results = $DB->get_records_sql($contentSql, [$this->courseId]);
+
         $items = [];
-            $j=0;
-                foreach($tactivities as $tact) {
-                    foreach($activities as $act){
-                        if  (($tact==$act['name'])) {
-                        $items[$j]['modname'] = $act['modname'];
-                            $items[$j]['id'] = $act['id'];
-                            $items[$j]['name'] = $act['name'];
-                        } 
-                    }
-                $j++;
+        $i = 0;
+        foreach ($results as $result) { /// foreach
+            //only print the tabs that have the same menu name
+            if ($result->menuname == $this->tab->menuname) {
+                //only print visible tabs within the menu
+
+                if ($result->visible == 1 || has_capability('moodle/course:update', $this->courseContext)) {
+                    $items[$i]['id'] = $result->id;
+                    $items[$i]['name'] = $result->name;
                 }
-            $menu = [
-                'name' => $this->tab->menuname,
-                'items' => $items
-            ];
-    return $menu;
+            }
+            $i++;
+        }
+
+        $menu = [
+            'name' => $this->tab->menuname,
+            'items' => $items
+        ];
+
+        return $menu;
     }
-   
+
     private function getTabContent() {
         global $CFG, $DB;
         

@@ -40,14 +40,14 @@ class mod_tab_mod_form extends moodleform_mod
             0 => 'recit_tab_0',
             //1 => 'Recit_tab_1',
            // 2 => 'Recit_tab_2',
-          //  3 => 'Recit_tab_3',
+            //3 => 'Recit_tab_3',
             4 => 'Recit_tab_4',
-          //  5 => 'Recit_tab_5',
-          //  6 => 'Recit_tab_6',
+            //5 => 'Recit_tab_5',
+            //6 => 'Recit_tab_6',
             7 => 'Recit_tab_7',
-         // 8 => 'Recit_tab_8',
-          //  9 => 'Recit_tab_9',
-          //  10 => 'Recit_tab_10',
+          /*  8 => 'Recit_tab_8',
+            9 => 'Recit_tab_9',
+            10 => 'Recit_tab_10',*/
             11 => 'Recit_tab_11',
             12 => 'Bootstrap'
         );
@@ -65,9 +65,7 @@ class mod_tab_mod_form extends moodleform_mod
 
         //Add Intro
         $this->standard_intro_elements(false);
-        $mform->addElement('advcheckbox', 'printheading', get_string('printheading', 'tab'), null, array('group' => 1), array('0', '1'));
         $mform->addElement('select', 'classrecit', get_string('tabstyle', 'tab'), $tabstyleoptions);
-        $mform->addHelpButton('classrecit', 'classrecit', 'tab');
         $mform->setType('classrecit', PARAM_INT);
         $mform->setDefault('printintro', 0);
         $mform->setAdvanced('printintro', false);
@@ -157,15 +155,11 @@ class mod_tab_mod_form extends moodleform_mod
         $mform->addElement('advcheckbox', 'displaymenu', get_string('displaymenuagree', 'tab'), null, array('group' => 1), array('0', '1'));
         
         $mform->setType('displaymenu', PARAM_INT);
-        //$mform->addElement('text', 'taborder', get_string('taborder', 'tab'), array('size' => '15'));
+        $mform->addElement('text', 'taborder', get_string('taborder', 'tab'), array('size' => '15'));
         $mform->addElement('text', 'menuname', get_string('menuname', 'tab'), array('size' => '45'));
-        $mform->addHelpButton('menuname', 'menuname', 'tab');
-        $mform->addElement('text', 'listactivity', get_string('listactivity', 'tab'), array('size' => '1024'));
-        $mform->addHelpButton('listactivity', 'listactivity', 'tab');
-        //$mform->setType('taborder', PARAM_INT);
-        $mform->setType('menuname', PARAM_TEXT);
-        $mform->setType('listactivity', PARAM_TEXT);
 
+        $mform->setType('taborder', PARAM_INT);
+        $mform->setType('menuname', PARAM_TEXT);
         
         //*********************************************************************************
         //*********************************************************************************
