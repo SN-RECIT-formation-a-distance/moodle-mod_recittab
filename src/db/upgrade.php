@@ -352,13 +352,13 @@ function xmldb_tab_upgrade($oldversion = 0)
         upgrade_mod_savepoint(true, 2021042004, 'tab');
     }
 }
-if ($oldversion < 2021042005)
+if ($oldversion < 2021042006)
     {
         {
 
             // Define field intro to be added to tab
             $table = new xmldb_table('tab');
-               $field = new xmldb_field('printheading', XMLDB_TYPE_INTEGER, '4', 0, null, null, null, 'listactivity');
+               $field = new xmldb_field('printheading', XMLDB_TYPE_INTEGER, '1', 'false', "0", 'false',  'listactivity');
             
     
             // Conditionally launch add field intro
@@ -368,7 +368,7 @@ if ($oldversion < 2021042005)
             }
         //+ Moodle 3.0 Update
         // tab savepoint reached
-        upgrade_mod_savepoint(true, 2021042005, 'tab');
+        upgrade_mod_savepoint(true, 2021042006, 'tab');
     }
 }
 }
