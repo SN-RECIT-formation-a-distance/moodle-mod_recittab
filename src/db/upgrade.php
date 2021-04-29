@@ -358,7 +358,7 @@ if ($oldversion < 2021042006)
 
             // Define field intro to be added to tab
             $table = new xmldb_table('tab');
-               $field = new xmldb_field('printheading', XMLDB_TYPE_INTEGER, '1', 'false', "0", 'false',  'listactivity');
+               $field = new xmldb_field('printheading', XMLDB_TYPE_INTEGER, '1', 1, null, null, null, 'listactivity');
             
     
             // Conditionally launch add field intro
